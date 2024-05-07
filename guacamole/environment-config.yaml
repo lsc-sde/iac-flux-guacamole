@@ -9,3 +9,14 @@ portal:
       nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
       nginx.ingress.kubernetes.io/proxy-body-size: 64m
       xlscsde.nhs.uk/dns-record: guacamole${environment_dns_suffix}
+
+
+database:
+  type: postgres
+  hostname: "${postgresql_server}"
+  port: "5432"
+  database: "guacamole"
+  user: "guac@${postgresql_server}"
+  password:
+    secret: "guacamole"
+    key: "db-password"
