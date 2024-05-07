@@ -1,0 +1,11 @@
+portal:
+  ingress:
+    host: ${environment_dns_prefix}guacamole${environment_dns_suffix}.${private_dnz_zone}
+    tls:
+      enabled: true
+      secretName: ${environment_dns_prefix}guacamole${environment_dns_suffix}.${private_dnz_zone}-tls
+    annotations:
+      nginx.ingress.kubernetes.io/ssl-redirect : "true"
+      nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
+      nginx.ingress.kubernetes.io/proxy-body-size: 64m
+      xlscsde.nhs.uk/dns-record: guacamole${environment_dns_suffix}
