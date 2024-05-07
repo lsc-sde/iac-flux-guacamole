@@ -29,6 +29,25 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
+  name: egress-remote-desktop-vnc
+spec:
+  egress:
+    - to: 
+      - ipBlock:
+          cidr: 10.0.0.0/8
+      ports:
+      - protocol: TCP
+        port: 3389
+      - protocol: TCP
+        port: 5900
+  podSelector: 
+    matchLabels: {}
+  policyTypes:
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
   name: egress-dns
 spec:
   egress:
