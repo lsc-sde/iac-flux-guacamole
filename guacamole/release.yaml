@@ -27,3 +27,6 @@ spec:
       retries: -1
     disableWait: true
     disableWaitForJobs: true
+  valuesFrom:
+  - kind: ConfigMap
+    name: environment-config
