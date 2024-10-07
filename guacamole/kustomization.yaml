@@ -12,3 +12,4 @@ resources:
   - release.yaml
   - networkpolicy.yaml
   - secret.yaml
+  
