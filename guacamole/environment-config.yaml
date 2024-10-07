@@ -18,7 +18,7 @@ portal:
   volumes:
   - name: guacamole-certificates
     configMap:
-      name: xlscsde-local-bundle
+      name: guacamole-certificate-authority-tls
       defaultMode: 0644
       
   env:
