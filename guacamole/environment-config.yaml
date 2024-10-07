@@ -48,7 +48,7 @@ database:
   hostname: "${postgresql_server}"
   port: "5432"
   database: "guacamole"
-  user: "guac@${postgresql_server}"
+  user: "guacamole@${postgresql_server}"
   password:
     secret: "guacamole"
     key: "db-password"
