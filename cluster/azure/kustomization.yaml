@@ -1,8 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: ${keycloak_namespace}
+namespace: ${guacamole_namespace}
 resources:
 - secret.yaml
-- instance.yaml
-- ../../keycloak
+- ../../guacamole
 - ../../cert-manager
