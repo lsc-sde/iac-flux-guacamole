@@ -5,7 +5,6 @@ portal:
       enabled: true
       secretName: ${environment_dns_prefix}guacamole${environment_dns_suffix}.${private_dnz_zone}-tls
     annotations:
-      nginx.ingress.kubernetes.io/app-root: /guacamole/
       nginx.ingress.kubernetes.io/ssl-redirect : "true"
       nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
       nginx.ingress.kubernetes.io/proxy-body-size: 64m
@@ -34,7 +33,7 @@ portal:
     - name: OPENID_CLIENT_ID
       value: guacamole
     - name: OPENID_REDIRECT_URI
-      value: "https://${environment_dns_prefix}guacamole${environment_dns_suffix}.${private_dnz_zone}"
+      value: "https://${environment_dns_prefix}guacamole${environment_dns_suffix}.${private_dnz_zone}/guacamole/"
     - name: EXTENSION_PRIORITY
       value: "openid"
     - name: OPENID_SCOPE
