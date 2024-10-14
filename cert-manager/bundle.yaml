@@ -23,9 +23,9 @@ spec:
       key: "ca-certificates.crt"
     additionalFormats:
       jks:
-        key: "guacamole.jks"
+        key: "bundle.jks"
       pkcs12:
-        key: "guacamole.p12"
+        key: "bundle.p12"
 
     namespaceSelector:
       matchLabels:
