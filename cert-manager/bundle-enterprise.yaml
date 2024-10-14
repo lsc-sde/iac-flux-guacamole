@@ -1,3 +1,15 @@
+apiVersion: xlscsde.nhs.uk/v1
+kind: SecretsDistribution
+metadata:
+  name: xlscsde-enterprise-certificate
+  annotations:
+    xlscsde.nhs.uk/secretUsage: ""
+spec:
+  name: xlscsde-enterprise-certificate
+  secrets:
+  - from: CertificateAuthority
+    to: ca.crt
+---
 apiVersion: trust.cert-manager.io/v1alpha1
 kind: Bundle
 metadata:
@@ -5,7 +17,7 @@ metadata:
 spec:
   sources:
   - secret:
-      name: nhs-certificates
+      name: xlscsde-enterprise-certificate
       key: ca.crt
   target:
     configMap:
