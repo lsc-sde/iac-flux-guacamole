@@ -1,0 +1,20 @@
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: xlscsde-enterprise-certificate
+spec:
+  sources:
+  - secret:
+      name: nhs-certificates
+      key: ca.crt
+  target:
+    configMap:
+      key: "enterprise.crt" 
+    additionalFormats:
+      jks:
+        key: "enterprise.jks"
+      pkcs12:
+        key: "enterprise.p12"
+    namespaceSelector:
+      matchLabels:
+        kubernetes.io/metadata.name: ${guacamole_namespace}
